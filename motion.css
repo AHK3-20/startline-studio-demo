@@ -1,0 +1,62 @@
+/* Small details with depth, designed to work with a mouse, keyboard, or touch. */
+.service-art{position:relative;width:min(270px,100%);height:190px;margin-top:24px;isolation:isolate;perspective:700px;pointer-events:none}
+.service-art-glow{position:absolute;inset:16px 24px 14px;border-radius:50%;background:radial-gradient(ellipse,rgba(246,91,55,.25),rgba(240,84,51,.05) 45%,transparent 72%);filter:blur(8px)}
+.service-art img{position:absolute;z-index:2;width:180px;height:180px;object-fit:contain;left:42px;top:0;filter:drop-shadow(0 20px 15px rgba(0,0,0,.25));transform-origin:center}
+.service-art-orbit{position:absolute;inset:34px 12px 31px;border:1px solid rgba(247,146,119,.38);border-radius:50%;transform:rotate(-19deg)}
+.service-art-orbit.orbit-two{inset:28px 26px 38px;border-color:rgba(255,198,177,.16);transform:rotate(29deg)}
+.service-art-dot{position:absolute;z-index:3;width:12px;height:12px;border-radius:50%;background:radial-gradient(circle at 30% 24%,#fff1d9,#ff9a70 38%,#c53d25 72%,#672023);box-shadow:0 4px 10px #08030480,0 0 16px #ff775e7a}
+.dot-one{left:28px;top:72px}.dot-two{right:28px;top:44px;width:8px;height:8px}
+.service-art-caption{position:absolute;right:0;bottom:2px;color:#d5afa5;font-size:8px;font-weight:800;letter-spacing:.12em}.service-art-caption b{color:#ff9878;font-size:13px;margin-left:5px}
+.motion-hint{display:flex;justify-content:space-between;align-items:center;padding:13px 0 11px;color:#c4a59b;font-size:9px;letter-spacing:.14em;font-weight:800}.motion-hint span{color:#ff9878;font-size:14px}
+.service-list details summary,.faq-list details summary{position:relative;isolation:isolate;border-radius:5px;transition:transform .35s cubic-bezier(.2,.8,.2,1),background-color .35s,color .35s,box-shadow .35s}
+.service-list details summary{padding-left:12px;padding-right:12px;margin-left:-12px;margin-right:-12px}
+.faq-list details summary{padding-left:12px;padding-right:12px;margin-left:-12px;margin-right:-12px}
+.service-list details[open] summary{color:#ffb39e;background:rgba(255,132,99,.07)}
+.faq-list details[open] summary{color:#bd4831;background:rgba(231,115,83,.08)}
+.service-list details summary:active,.faq-list details summary:active{transform:scale(.98);background:rgba(238,122,87,.16)}
+.service-list summary i,.faq-list summary i{border-radius:50%;transition:background .3s,transform .35s}
+.service-list details[open] summary i{background:rgba(255,148,118,.2);transform:rotate(180deg)}
+.faq-list details[open] summary i{background:rgba(220,84,54,.12);transform:rotate(180deg)}
+.service-list details[open] .service-body,.faq-list details[open]>p{animation:unfold-in .42s cubic-bezier(.2,.8,.2,1) both;transform-origin:top}
+.desktop-nav a{position:relative;padding:8px 0}.desktop-nav a:after{content:"";position:absolute;left:0;bottom:0;width:100%;height:1px;background:#ff9677;transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.header-cta,.button,.round-link,.creative-break-link,.project-button,.footer-up,.mobile-nav a{transition:transform .3s cubic-bezier(.2,.8,.2,1),background .3s,color .3s,box-shadow .3s,border-color .3s}
+.header-cta:active,.button:active,.project-button:active{transform:scale(.96)}
+.tap-responsive{position:relative;isolation:isolate;overflow:hidden}
+.tap-ripple{position:absolute;z-index:0;width:12px;height:12px;left:var(--tap-x,50%);top:var(--tap-y,50%);border-radius:50%;pointer-events:none;background:rgba(255,160,125,.44);transform:translate(-50%,-50%) scale(0);animation:tap-wave .65s ease-out forwards}
+.project-orb{position:absolute;z-index:2;top:20px;right:26px;width:46px;height:46px;border-radius:50%;pointer-events:none;background:radial-gradient(circle at 29% 23%,#fff6e6 0%,#ffd2a7 12%,#ef805e 39%,#a43f30 68%,#6c2924 100%);box-shadow:inset -5px -8px 12px rgba(63,17,12,.32),0 9px 16px rgba(83,39,26,.23)}
+.studio-visual .project-orb{background:radial-gradient(circle at 30% 24%,#fff6e8 0%,#f9d0c8 13%,#e58c85 39%,#a54e4e 70%,#73343f 100%)}
+.project-visual .mini-browser{will-change:transform}
+.faq-ornament{width:180px;height:130px;position:relative;margin-top:38px;pointer-events:none}
+.faq-sphere{position:absolute;left:40px;top:19px;width:85px;height:85px;border-radius:50%;background:radial-gradient(circle at 27% 23%,#fff5e3 0%,#ffc3a4 13%,#fc805e 39%,#ca4b36 66%,#6f2926 100%);box-shadow:inset -10px -13px 18px rgba(91,24,22,.28),0 19px 25px rgba(164,75,48,.22)}
+.faq-orbit{position:absolute;z-index:1;left:8px;top:39px;width:155px;height:47px;border:1px solid #c98270;border-radius:50%;transform:rotate(-25deg)}
+.faq-spark{position:absolute;z-index:2;right:13px;top:17px;color:#ec714e;font-size:20px;text-shadow:0 2px 8px #ffc6ad}
+@media(hover:hover) and (pointer:fine) and (min-width:701px){
+  .desktop-nav a:hover:after{transform:scaleX(1)}
+  .header-cta:hover,.button:hover,.round-link:hover,.creative-break-link:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(232,84,48,.18)}
+  .service-list details:hover summary{transform:translate3d(9px,-2px,0);color:#ffd0bf;background:rgba(255,144,111,.11);box-shadow:-3px 5px 20px rgba(0,0,0,.12)}
+  .faq-list details:hover summary{transform:translate3d(8px,-2px,0);color:#b4432c;background:rgba(231,115,83,.1);box-shadow:0 8px 20px rgba(162,84,59,.08)}
+  .project-button:hover{transform:rotate(45deg) scale(1.06)}
+  .project-card:hover .project-visual .mini-browser{transform:rotateX(calc(2deg + var(--tilt-y,0deg))) rotateY(calc(-3deg + var(--tilt-x,0deg))) translateY(-5px)}
+}
+.service-list details summary:focus-visible,.faq-list details summary:focus-visible{background:rgba(238,122,87,.14)}
+@media(prefers-reduced-motion:no-preference){
+  .service-art img{animation:service-float 6s ease-in-out infinite}
+  .service-art.is-reacting img{animation:service-react .6s cubic-bezier(.2,.8,.2,1),service-float 6s .6s ease-in-out infinite}
+  .service-art-orbit.orbit-one{animation:orbit-wobble 9s ease-in-out infinite}
+  .project-orb,.faq-sphere{animation:orb-float 5s ease-in-out infinite}
+  .studio-visual .project-orb{animation-delay:-2s}
+  .faq-spark{animation:spark-twinkle 3s ease-in-out infinite}
+}
+@keyframes tap-wave{to{transform:translate(-50%,-50%) scale(38);opacity:0}}
+@keyframes unfold-in{from{opacity:.15;transform:translateY(-8px) scaleY(.96)}to{opacity:1;transform:translateY(0) scaleY(1)}}
+@keyframes service-float{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-11px) rotate(4deg)}}
+@keyframes service-react{0%,100%{transform:scale(1) rotate(-4deg)}45%{transform:scale(1.12) rotate(11deg)}}
+@keyframes orbit-wobble{0%,100%{transform:rotate(-19deg) scale(1)}50%{transform:rotate(12deg) scale(1.03)}}
+@keyframes orb-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes spark-twinkle{0%,100%{transform:scale(.8) rotate(0);opacity:.65}50%{transform:scale(1.15) rotate(35deg);opacity:1}}
+@media(max-width:700px){
+  .service-art{height:165px;margin:24px auto -8px;width:235px}.service-art img{width:165px;height:165px;left:35px}.service-art-caption{bottom:-3px}
+  .project-orb{width:38px;height:38px;right:18px;top:16px}
+  .faq-ornament{width:140px;height:85px;margin-top:20px}.faq-sphere{width:64px;height:64px;left:29px;top:7px}.faq-orbit{width:115px;height:35px;top:25px;left:7px}.faq-spark{right:5px;top:3px}
+}
+@media(prefers-reduced-motion:reduce){.service-list details[open] .service-body,.faq-list details[open]>p{animation:none!important}.tap-ripple{display:none!important}.project-visual .mini-browser{will-change:auto}}
